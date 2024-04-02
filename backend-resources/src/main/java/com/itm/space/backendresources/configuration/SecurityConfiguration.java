@@ -45,3 +45,23 @@ public class SecurityConfiguration {
         return new JwtAuthenticationToken(jwt, authorities, authenticationToken.getName());
     }
 }
+/*
+Предоставленный Java-код определяет класс конфигурации Spring Security с именем SecurityConfiguration.
+Он помечен символами @Configuration, @EnableWebSecurity и @EnableMethodSecurity.
+
+Этот класс отвечает за настройку безопасности для приложения Spring Boot.
+Он отключает защиту CSRF, разрешает все запросы и настраивает сервер ресурсов OAuth 2.0 с аутентификацией JWT.
+Аннотация @EnableWebSecurity включает защиту Spring для приложения.
+Аннотация @EnableMethodSecurity(securedEnabled = true) позволяет использовать аннотации безопасности на уровне метода,
+такие как @Secured.
+Метод SecurityFilterChain() используется для настройки цепочки фильтров безопасности.
+Он отключает защиту CSRF, разрешает все запросы и настраивает сервер ресурсов OAuth 2.0 с аутентификацией JWT.
+
+Метод oauth2ResourceServer() настраивает сервер ресурсов OAuth 2.0.
+Метод jwt() настраивает аутентификацию JWT.
+Метод jwtAuthenticationConverter используется для преобразования токена JWT в JwtAuthenticationToken.
+Этот метод извлекает роли из токена JWT и добавляет их в коллекцию GrantedAuthority.
+
+Этот класс конфигурации предоставляет способ простой настройки безопасности для приложения Spring Boot,
+использующего аутентификацию OAuth 2.0 JWT.
+ */
